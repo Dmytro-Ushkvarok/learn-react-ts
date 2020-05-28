@@ -2,6 +2,7 @@ import { app } from './reducer';
 import { combineReducers } from 'redux';
 import { router } from './router';
 import { AuthState } from '@auth';
+import { UserState } from './user';
 
 /**
  * App state
@@ -9,6 +10,7 @@ import { AuthState } from '@auth';
 type State = {
   router: ReturnType<typeof router>;
   auth: AuthState;
+  user: UserState;
 };
 
 export { State };

@@ -6,6 +6,7 @@ import { Switch, Route } from 'react-router-dom';
 
 const Auth = register('auth', () => import('@auth'));
 const Profile = register('profile', () => import('@profile'));
+const Registration = register('registration', () => import('@registration'));
 
 /**
  * Renders App
@@ -16,6 +17,7 @@ const App: React.FC<AppProps> = ({}) => (
       <Switch>
         <Route path='/auth' component={Auth} />
         <Route path='/profile' component={Profile} />
+        <Route path='/registration' component={Registration} />
       </Switch>
     </React.Suspense>
   </div>

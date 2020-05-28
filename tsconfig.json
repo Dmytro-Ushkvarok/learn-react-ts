@@ -29,7 +29,9 @@
       "@main-page": ["./src/modules/main-page/index"],
       "@main-page/*": ["./src/modules/main-page/*"],
       "@profile": ["./src/modules/profile/index"],
-      "@profile/*": ["./src/modules/profile/*"]
+      "@profile/*": ["./src/modules/profile/*"],
+      "@registration": ["./src/modules/registration/index"],
+      "@registration/*": ["./src/modules/registration/*"]
     }
   },
   "include": ["./src/**/*", "./typings/**/*"],
