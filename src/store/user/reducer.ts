@@ -1,7 +1,7 @@
 import { UserState } from './state';
 import { SET_USERNAME, SET_EMAIL } from './actions';
 
-const user = (state: UserState, action) => {
+function userReducer(state: UserState, action) {
   switch (action.type) {
     case SET_USERNAME:
       return {
@@ -19,6 +19,6 @@ const user = (state: UserState, action) => {
       return state;
       break;
   }
-};
+}
 
-export { user };
+export { userReducer };

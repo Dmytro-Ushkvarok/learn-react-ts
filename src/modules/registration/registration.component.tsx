@@ -2,13 +2,15 @@ import * as React from 'react';
 import { RegistrationProps } from './registration.props';
 import * as styles from './registration.scss';
 import { useSelector, useDispatch } from 'react-redux';
-import { State, user } from '@store';
+import { State } from '@store/state';
+import { setUsername } from '@store/user';
 
 /**
  * Renders Registration
  */
-const Registration: React.FC<RegistrationProps> = ({}) => {
-  const { user } = useSelector((state: State) => state.user);
+const Registration: React.FC<RegistrationProps> = () => {
+  const user = useSelector((state: State) => state.user);
+  console.log(user);
   const dispatch = useDispatch();
 
   const onUserNameChange = event => {
@@ -22,7 +24,12 @@ const Registration: React.FC<RegistrationProps> = ({}) => {
         <h2>Some text will be here</h2>
 
         <label>Username</label>
-        <input type='text' name='username' id='username' />
+        <input
+          type='text'
+          name='username'
+          id='username'
+          onChange={onUserNameChange}
+        />
 
         <label>Email</label>
         <input type='text' name='email' id='email' />

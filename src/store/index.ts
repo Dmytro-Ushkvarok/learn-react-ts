@@ -11,6 +11,7 @@ import createSagaMiddleware from 'redux-saga';
 import { getContext } from './context';
 import { app } from './reducer';
 import { sagas } from './sagas';
+import { userReducer } from './user';
 
 /**
  * Custom store methods
@@ -35,7 +36,7 @@ const createStore = (history: History) => {
     reducer,
     enviroment.development ? composeWithDevTools(applied) : applied
   );
-  const modules = {};
+  const modules = { userReducer };
   const context = getContext(history, store);
 
   run(sagaMiddleware, sagas, context);
